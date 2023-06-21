@@ -800,11 +800,11 @@ public class FeedbackQuestionAttributesTest extends BaseAttributesTest {
         // feedbackQuestionCt1.feedbackSessionName = NULL
         FeedbackQuestionAttributes feedbackQuestionCt1 = FeedbackQuestionAttributes.builder()
                 .withFeedbackSessionName("")
-                .build();; 
+                .build(); 
         // feedbackQuestionOtherCt1.feedbackSessionName = NULL
         FeedbackQuestionAttributes feedbackQuestionOtherCt1 = FeedbackQuestionAttributes.builder()
                 .withFeedbackSessionName("")
-                .build();;
+                .build();
         assertTrue(feedbackQuestionCt1.equals(feedbackQuestionOtherCt1));
 
         //CT2 (caso NULL e testFeedbackSession respectivamente)
