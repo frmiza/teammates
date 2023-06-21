@@ -795,6 +795,35 @@ public class FeedbackQuestionAttributesTest extends BaseAttributesTest {
 
     @Test
     public void testEquals() {
+        
+        //CT1 (caso NULL e NULL respectivamente)
+        // feedbackQuestionCt1.feedbackSessionName = NULL
+        FeedbackQuestionAttributes feedbackQuestionCt1 = FeedbackQuestionAttributes.builder()
+                .withFeedbackSessionName("")
+                .build();; 
+        // feedbackQuestionOtherCt1.feedbackSessionName = NULL
+        FeedbackQuestionAttributes feedbackQuestionOtherCt1 = FeedbackQuestionAttributes.builder()
+                .withFeedbackSessionName("")
+                .build();;
+        assertTrue(feedbackQuestionCt1.equals(feedbackQuestionOtherCt1));
+
+        //CT2 (caso NULL e testFeedbackSession respectivamente)
+        // feedbackQuestionCt1.feedbackSessionName = NULL
+        // feedbackQuestionOther.feedbackSessionName = testFeedbackSession
+        FeedbackQuestionAttributes feedbackQuestionOtherCt2 = FeedbackQuestionAttributes.builder()
+                .withFeedbackSessionName("testFeedbackSession")
+                .build();
+        assertFalse(feedbackQuestionCt1.equals(feedbackQuestionOtherCt2));
+
+        //CT3 (caso testFeedbackSession e NULL respectivamente)
+        // feedbackQuestionCt1.feedbackSessionName = testFeedbackSession
+        feedbackQuestionOtherCt1 = FeedbackQuestionAttributes.builder()
+                .withFeedbackSessionName("testFeedbackSession")
+                .build();
+        // feedbackQuestionOtherCt1.feedbackSessionName = NULL
+        assertFalse(feedbackQuestionCt1.equals(feedbackQuestionOtherCt2));
+
+
         FeedbackQuestionAttributes feedbackQuestion = getNewFeedbackQuestionAttributes();
 
         // When the two feedback questions are copies of each other
