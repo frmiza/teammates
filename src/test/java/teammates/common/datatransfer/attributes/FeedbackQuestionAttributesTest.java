@@ -801,6 +801,7 @@ public class FeedbackQuestionAttributesTest extends BaseAttributesTest {
         FeedbackQuestionAttributes feedbackQuestionCt1 = FeedbackQuestionAttributes.builder()
                 .withFeedbackSessionName("")
                 .build(); 
+        assertNull(feedbackQuestionCt1.getCourseId());
         // feedbackQuestionOtherCt1.feedbackSessionName = NULL
         FeedbackQuestionAttributes feedbackQuestionOtherCt1 = FeedbackQuestionAttributes.builder()
                 .withFeedbackSessionName("")
